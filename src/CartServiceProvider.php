@@ -2,9 +2,9 @@
 
 namespace Hnooz\Cart;
 
+use Hnooz\Cart\Commands\CartCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Hnooz\Cart\Commands\CartCommand;
 
 class CartServiceProvider extends PackageServiceProvider
 {

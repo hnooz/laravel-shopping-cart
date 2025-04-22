@@ -2,9 +2,9 @@
 
 namespace Hnooz\Cart\Tests;
 
+use Hnooz\Cart\CartServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Hnooz\Cart\CartServiceProvider;
 
 class TestCase extends Orchestra
 {
