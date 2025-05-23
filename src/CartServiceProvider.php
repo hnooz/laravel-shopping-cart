@@ -16,10 +16,10 @@ class CartServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('laravel-cart')
+            ->name('cart')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_laravel_cart_table')
+            ->hasMigrations('create_carts_table', 'create_cart_items_table')
             ->hasCommand(CartCommand::class);
     }
 }
