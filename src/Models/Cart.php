@@ -1,4 +1,5 @@
 <?php
+
 namespace Hnooz\Cart\Models;
 
 use Illuminate\Database\Eloquent\Model;
