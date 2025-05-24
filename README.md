@@ -1,9 +1,9 @@
 # Laravel Cart
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/hnooz/laravel-cart.svg?style=flat-square)](https://packagist.org/packages/hnooz/laravel-shopping-cart)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/hnooz/laravel-cart/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/hnooz/laravel-shopping-cart/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/hnooz/laravel-cart/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/hnooz/laravel-shopping-cart/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/hnooz/laravel-cart.svg?style=flat-square)](https://packagist.org/packages/hnooz/laravel-shopping-cart)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/hnooz/laravel-shopping-cart.svg?style=flat-square)](https://packagist.org/packages/hnooz/laravel-shopping-cart)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/hnooz/laravel-shooping-cart/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/hnooz/laravel-shopping-cart/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/hnooz/laravel-shopping-cart/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/hnooz/laravel-shopping-cart/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/hnooz/laravel-shooping-cart.svg?style=flat-square)](https://packagist.org/packages/hnooz/laravel-shopping-cart)
 
 A flexible and easy-to-use Laravel shopping cart package that supports both database and session storage. Perfect for e-commerce applications that need to handle both guest and authenticated user shopping experiences.
 
