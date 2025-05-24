@@ -1,5 +1,5 @@
 <?php
 
-use Hnooz\Cart\Tests\TestCase;
+use Hnooz\LaravelCart\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

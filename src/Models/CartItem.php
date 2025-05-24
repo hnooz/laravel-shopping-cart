@@ -1,15 +1,18 @@
 <?php
-namespace Hnooz\Cart\Models;
+
+namespace Hnooz\LaravelCart\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class CartItem extends Model
 {
     protected $fillable = [
-        'cart_id',
-        'product_id',
-        'quantity',
+        'session_id',
+        'user_id',
+        'item_id',
+        'name',
         'price',
+        'quantity',
         'options',
     ];
 
@@ -17,11 +20,18 @@ class CartItem extends Model
     {
         return [
             'options' => 'array',
+            'price' => 'float',
+            'quantity' => 'integer',
         ];
     }
 
-    public function cart()
+    public function getTable(): string
     {
-        return $this->belongsTo(Cart::class);
+        return config('cart.table', 'cart_items');
+    }
+
+    public function getSubtotal(): float
+    {
+        return $this->price * $this->quantity;
     }
 }

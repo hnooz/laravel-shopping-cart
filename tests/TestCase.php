@@ -1,9 +1,8 @@
 <?php
 
-namespace Hnooz\Cart\Tests;
+namespace Hnooz\LaravelCart\Tests;
 
-use Hnooz\Cart\CartServiceProvider;
-use Illuminate\Database\Eloquent\Factories\Factory;
+use Hnooz\LaravelCart\CartServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -11,10 +10,7 @@ class TestCase extends Orchestra
     protected function setUp(): void
     {
         parent::setUp();
-
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Hnooz\\Cart\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 
     protected function getPackageProviders($app)
@@ -28,6 +24,11 @@ class TestCase extends Orchestra
     {
         config()->set('database.default', 'testing');
 
+        config()->set('database.connections.testing', [
+            'driver' => 'sqlite',
+            'database' => ':memory:',
+            'prefix' => '',
+        ]);
         /*
          foreach (\Illuminate\Support\Facades\File::allFiles(__DIR__ . '/database/migrations') as $migration) {
             (include $migration->getRealPath())->up();
