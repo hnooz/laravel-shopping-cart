@@ -16,7 +16,7 @@ concurrency:
 jobs:
   test:
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 5
+    timeout-minutes: 10
     strategy:
       fail-fast: true
       matrix:
@@ -26,36 +26,48 @@ jobs:
             laravel: 12.*
             testbench: 10.*
             stability: prefer-stable
+            pest: ^3.0
+            pest_plugin: ^3.0
 
           - os: ubuntu-latest
             php: 8.3
             laravel: 12.*
             testbench: 10.*
             stability: prefer-lowest
+            pest: ^3.0
+            pest_plugin: ^3.0
 
           - os: ubuntu-latest
             php: 8.3
             laravel: 11.*
             testbench: 9.*
             stability: prefer-stable
+            pest: ^3.0
+            pest_plugin: ^3.0
 
           - os: ubuntu-latest
             php: 8.3
             laravel: 11.*
             testbench: 9.*
             stability: prefer-lowest
+            pest: ^3.0
+            pest_plugin: ^3.0
 
           - os: windows-latest
             php: 8.3
             laravel: 12.*
             testbench: 10.*
             stability: prefer-stable
+            pest: ^3.0
+            pest_plugin: ^3.0
 
           - os: windows-latest
             php: 8.3
             laravel: 11.*
             testbench: 9.*
             stability: prefer-stable
+            pest: ^3.0
+            pest_plugin: ^3.0
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
     steps:
@@ -74,12 +86,23 @@ jobs:
           echo "::add-matcher::${{ runner.tool_cache }}/php.json"
           echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
-      - name: Install dependencies
+      - name: Install Laravel, Testbench and Pest
         run: |
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
-        
+          composer require --dev pestphp/pest:${{ matrix.pest }} pestphp/pest-plugin-laravel:${{ matrix.pest_plugin }} --no-interaction --no-update
+          composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+
       - name: List Installed Dependencies
         run: composer show -D
 
-      - name: Execute tests
-        run: vendor/bin/pest --ci
+      - name: Verify Pest installation
+        run: ls -la vendor/bin/
+
+      - name: Run Tests
+        run: |
+          if [ -f vendor/bin/pest ]; then
+            vendor/bin/pest --ci
+          else
+            vendor/bin/phpunit
+          fi
+        shell: bash
