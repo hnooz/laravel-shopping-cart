@@ -23,7 +23,7 @@ A flexible and easy-to-use Laravel shopping cart package that supports both data
 You can install the package via composer:
 
 ```bash
-composer require hnooz/laravel-cart
+composer require hnooz/laravel-shopping-cart
 ```
 
 ### Publish and Run Migrations

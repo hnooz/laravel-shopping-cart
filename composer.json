@@ -1,5 +1,5 @@
 {
-    "name": "hnooz/laravel-cart",
+    "name": "hnooz/laravel-shopping-cart",
     "description": "A lightweight and flexible Laravel package for managing shopping carts with full support for cart items, session storage, and database persistence.",
     "keywords": [
         "Hnooz",
@@ -7,7 +7,7 @@
         "laravel-cart",
         "cart"
     ],
-    "homepage": "https://github.com/hnooz/laravel-cart",
+    "homepage": "https://github.com/hnooz/laravel-shopping-cart",
     "license": "MIT",
     "authors": [
         {
