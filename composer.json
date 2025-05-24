@@ -44,7 +44,7 @@
         "post-autoload-dump": "@composer run prepare",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "test": "vendor/bin/pest",
-       "style-fix": "vendor/bin/pint",
+        "style-fix": "vendor/bin/pint",
         "style-check": "./vendor/bin/pint --test",
         "rector-dry": [
             "./vendor/bin/rector process --dry-run"

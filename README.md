@@ -103,7 +103,7 @@ return [
 ### Basic Operations
 
 ```php
-use Hnooz\Cart\Facades\Cart;
+use Hnooz\LaravelCart\Facades\Cart;
 
 // Add items to cart
 Cart::add('product-1', 'iPhone 14', 999.99, 1);
@@ -186,7 +186,7 @@ When a guest user logs in, their session cart can be easily migrated:
 
 ```php
 // In your authentication logic
-use Hnooz\Cart\Facades\Cart;
+use Hnooz\LaravelCart\Facades\Cart;
 
 // After user login
 if (session()->has('shopping_cart')) {
@@ -243,7 +243,7 @@ Returns the total price of all items in the cart.
 You can type-hint the contract in your classes:
 
 ```php
-use Hnooz\Cart\Contracts\CartInterface;
+use Hnooz\LaravelCart\Contracts\CartInterface;
 
 class CheckoutService
 {
@@ -268,7 +268,7 @@ class CheckoutService
 You can create your own cart implementation by implementing the `CartInterface`:
 
 ```php
-use Hnooz\Cart\Contracts\CartInterface;
+use Hnooz\LaravelCart\Contracts\CartInterface;
 
 class CustomCartManager implements CartInterface
 {
@@ -287,25 +287,18 @@ The package comes with comprehensive tests. To run the tests:
 composer test
 ```
 
-To run tests with coverage:
-
-```bash
-composer test-coverage
-```
-
 ## Code Quality
 
 The package uses several tools to maintain code quality:
 
 ```bash
-# Fix code style
-composer lint
 
-# Run static analysis
-composer analyse
+# Run Pint for style fix
+composer style-fix
 
 # Run rector for code improvements
-composer rector
+composer rector-dry
+composer rector-fix
 ```
 
 ## Changelog
@@ -316,13 +309,9 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-## Security Vulnerabilities
-
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
-
 ## Credits
 
-- [Hnooz](https://github.com/hnooz)
+- [Mohamed Idris](https://github.com/hnooz)
 - [All Contributors](../../contributors)
 
 ## License
