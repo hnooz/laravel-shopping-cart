@@ -9,14 +9,14 @@ A flexible and easy-to-use Laravel shopping cart package that supports both data
 
 ## Features
 
-- 🛒 **Flexible Storage**: Database, session, or hybrid storage options
-- 👤 **Multi-User Support**: Seamlessly handles guest and authenticated users
-- 🚀 **Easy-to-Use Facade**: Simple, intuitive API
-- 📦 **Item Management**: Add, remove, increase/decrease quantities
-- 💰 **Calculations**: Automatic totals and item counts
-- 🧪 **Well Tested**: Comprehensive test coverage with Pest
-- ⚡ **Laravel 12 Ready**: Built for the latest Laravel version
-- 🎯 **Clean Code**: Uses Rector and Pint for code quality
+- **Flexible Storage**: Database, session, or hybrid storage options
+- **Multi-User Support**: Seamlessly handles guest and authenticated users
+- **Easy-to-Use Facade**: Simple, intuitive API
+- **Item Management**: Add, remove, increase/decrease quantities
+- **Calculations**: Automatic totals and item counts
+- **Well Tested**: Comprehensive test coverage with Pest
+- **Laravel 12 Ready**: Built for the latest Laravel version
+- **Clean Code**: Uses Rector and Pint for code quality
 
 ## Installation
 
